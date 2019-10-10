@@ -203,7 +203,7 @@ class HTML_QuickForm_Controller
             case 'submit':
             case 'display':
             case 'jump':
-                $className = 'HTML_QuickForm_Action_' . $actionName;
+                $className = 'HTML_QuickForm_Action_' . ucfirst($actionName);
                 $this->_actions[$actionName] = new $className();
                 return $this->_actions[$actionName]->perform($page, $actionName);
                 break;
