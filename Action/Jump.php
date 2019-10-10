@@ -125,7 +125,7 @@ class HTML_QuickForm_Action_Jump extends HTML_QuickForm_Action
         }
     }
 
-    function perform(&$page, $actionName)
+    function perform($page, $actionName)
     {
         // check whether the page is valid before trying to go to it
         if ($page->controller->isModal()) {
