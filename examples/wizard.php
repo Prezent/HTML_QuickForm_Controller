@@ -92,7 +92,7 @@ class ActionProcess extends HTML_QuickForm_Action
     }
 }
 
-$wizard =& new HTML_QuickForm_Controller('Wizard');
+$wizard = new HTML_QuickForm_Controller('Wizard');
 $wizard->addPage(new PageFirst('page1'));
 $wizard->addPage(new PageSecond('page2'));
 $wizard->addPage(new PageThird('page3'));

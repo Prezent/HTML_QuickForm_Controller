@@ -44,7 +44,7 @@ class ActionProcess extends HTML_QuickForm_Action
     }
 }
 
-$page =& new SimplePage('page1');
+$page = new SimplePage('page1');
 
 // We actually add these handlers here for the sake of example
 // They can be automatically loaded and added by the controller
@@ -54,7 +54,7 @@ $page->addAction('submit', new HTML_QuickForm_Action_Submit());
 // This is the action we should always define ourselves
 $page->addAction('process', new ActionProcess());
 
-$controller =& new HTML_QuickForm_Controller('simpleForm');
+$controller = new HTML_QuickForm_Controller('simpleForm');
 $controller->addPage($page);
 $controller->run();
 ?>

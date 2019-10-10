@@ -134,7 +134,7 @@ class ActionProcess extends HTML_QuickForm_Action
 }
 
 
-$wizard =& new HTML_QuickForm_Controller('regWizard', true);
+$wizard = new HTML_QuickForm_Controller('regWizard', true);
 $wizard->addPage(new Page_Account_Credentials('page1'));
 $wizard->addPage(new Page_Account_Information('page2'));
 

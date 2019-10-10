@@ -180,10 +180,10 @@ class ActionDisplay extends HTML_QuickForm_Action_Display
         require_once 'HTML/Template/Sigma.php';
         require_once 'HTML/QuickForm/Renderer/ITDynamic.php';
 
-        $tpl =& new HTML_Template_Sigma('./templates');
+        $tpl = new HTML_Template_Sigma('./templates');
         $tpl->loadTemplateFile('upload.html');
 
-        $renderer =& new HTML_QuickForm_Renderer_ITDynamic($tpl);
+        $renderer = new HTML_QuickForm_Renderer_ITDynamic($tpl);
         $renderer->setElementBlock(array(
            'layout'     => 'qf_layout',
            'buttons'    => 'qf_buttons',
@@ -212,7 +212,7 @@ class ActionProcess extends HTML_QuickForm_Action
     }
 }
 
-$wizard =& new HTML_QuickForm_Controller('uploadWizard', true);
+$wizard = new HTML_QuickForm_Controller('uploadWizard', true);
 $wizard->addPage(new Page_CMS_Layout('page1'));
 $wizard->addPage(new Page_CMS_Fill('page2'));
 $wizard->addPage(new Page_CMS_Preview('page3'));

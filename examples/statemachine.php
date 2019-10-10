@@ -215,12 +215,12 @@ class ActionProcess extends HTML_QuickForm_Action
     }
 }
 
-$statemachine =& new HTML_QuickForm_Controller('StateMachine');
+$statemachine = new HTML_QuickForm_Controller('StateMachine');
 
-$page1  =& new PageFirst('page1');
-$page2a =& new PageSecondAlpha('page2a');
-$page2b =& new PageSecondBeta('page2b');
-$page3  =& new PageThird('page3');
+$page1  = new PageFirst('page1');
+$page2a = new PageSecondAlpha('page2a');
+$page2b = new PageSecondBeta('page2b');
+$page3  = new PageThird('page3');
 
 $statemachine->addPage($page1);
 $statemachine->addPage($page2a);

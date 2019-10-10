@@ -155,7 +155,7 @@ class ActionProcess extends HTML_QuickForm_Action
     }
 }
 
-$tabbed =& new HTML_QuickForm_Controller('Tabbed', false);
+$tabbed = new HTML_QuickForm_Controller('Tabbed', false);
 
 $tabbed->addPage(new PageFoo('foo'));
 $tabbed->addPage(new PageBar('bar'));
