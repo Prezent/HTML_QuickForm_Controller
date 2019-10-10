@@ -144,9 +144,9 @@ class HTML_QuickForm_Controller
     * @param  string                name of the action
     * @param  HTML_QuickForm_Action the handler for the action
     */
-    function addAction($actionName, &$action)
+    function addAction($actionName, $action)
     {
-        $this->_actions[$actionName] =& $action;
+        $this->_actions[$actionName] = $action;
     }
 
 
@@ -156,10 +156,10 @@ class HTML_QuickForm_Controller
     * @access public
     * @param  HTML_QuickForm_Page
     */
-    function addPage(&$page)
+    function addPage($page)
     {
-        $page->controller =& $this;
-        $this->_pages[$page->getAttribute('id')] =& $page;
+        $page->controller = $this;
+        $this->_pages[$page->getAttribute('id')] = $page;
     }
 
 
@@ -171,7 +171,7 @@ class HTML_QuickForm_Controller
     * @return HTML_QuickForm_Page   A reference to the page
     * @throws PEAR_Error
     */
-    function &getPage($pageName)
+    function getPage($pageName)
     {
         if (!isset($this->_pages[$pageName])) {
             return PEAR::raiseError('HTML_QuickForm_Controller: Unknown page "' . $pageName . '"');
@@ -192,7 +192,7 @@ class HTML_QuickForm_Controller
     * @param  string                Name of the action
     * @throws PEAR_Error
     */
-    function handle(&$page, $actionName)
+    function handle($page, $actionName)
     {
         if (isset($this->_actions[$actionName])) {
             return $this->_actions[$actionName]->perform($page, $actionName);
@@ -244,7 +244,7 @@ class HTML_QuickForm_Controller
                 // We should handle the possible situation when the user has never
                 // seen a page of a non-modal multipage form
                 if (!$this->isModal() && null === $data['valid'][$key]) {
-                    $page =& $this->_pages[$key];
+                    $page = $this->_pages[$key];
                     // Fix for bug #8687: the unseen page was considered
                     // submitted, so defaults for checkboxes and multiselects
                     // were not used. Shouldn't break anything since this flag
